@@ -30,6 +30,13 @@ describe("src/icipher.ts", function () {
   assert.equal(examplejs_printLines.join("\n"), "abc"); examplejs_printLines = [];
   });
           
+  it("decipher():_", function () {
+    examplejs_printLines = [];
+  var fog = icipher.cipher('a_b_c', 'zs')
+  examplejs_print(icipher.decipher(fog, 'zs'))
+  assert.equal(examplejs_printLines.join("\n"), "a_b_c"); examplejs_printLines = [];
+  });
+          
   it("decipher():aes192", function () {
     examplejs_printLines = [];
   examplejs_print(icipher.decipher('iMKU4mzDdZP62gJuqaABgg', 'zs', 'aes192'))

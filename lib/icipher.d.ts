@@ -27,6 +27,12 @@ declare function cipher(text: string, key: string, algorithm?: string): string;
   console.log(icipher.decipher('x_-tYz4knDo', 'zs'))
   // > abc
   ```
+ * @example decipher():_
+  ```js
+  var fog = icipher.cipher('a_b_c', 'zs')
+  console.log(icipher.decipher(fog, 'zs'))
+  // > a_b_c
+  ```
  * @example decipher():aes192
   ```js
   console.log(icipher.decipher('iMKU4mzDdZP62gJuqaABgg', 'zs', 'aes192'))
