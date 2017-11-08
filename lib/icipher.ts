@@ -4,11 +4,12 @@
  * 🐡cipher🐡
  * @author
  *   zswang (http://weibo.com/zswang)
- * @version 0.0.17
- * @date 2017-10-14
+ * @version 0.0.18
+ * @date 2017-10-16
  * @license MIT
  */
 import * as crypto from 'crypto'
+/*<function name="icipher_cipher">*/
 /**
  * 加密
  *
@@ -26,7 +27,7 @@ import * as crypto from 'crypto'
   // > iMKU4mzDdZP62gJuqaABgg
   ```
  */
-function cipher(text: string, key: string, algorithm = 'des-ede3'): string {
+function icipher_cipher(text: string, key: string, algorithm = 'des-ede3'): string {
   let dict: {
     [key: string]: string
   } = {
@@ -38,7 +39,8 @@ function cipher(text: string, key: string, algorithm = 'des-ede3'): string {
   return (cip.update(text, 'utf8', 'base64') + cip.final('base64')).replace(/[+/=]/g, (all) => {
     return dict[all]
   })
-}
+} /*</function>*/
+/*<function name="icipher_decipher">*/
 /**
  * 解密
  *
@@ -62,7 +64,7 @@ function cipher(text: string, key: string, algorithm = 'des-ede3'): string {
   // > abc
   ```
  */
-function decipher(encrypted: string, key: string, algorithm = 'des-ede3'): string {
+function icipher_decipher(encrypted: string, key: string, algorithm = 'des-ede3'): string {
   let dict: {
     [key: string]: string
   } = {
@@ -73,8 +75,8 @@ function decipher(encrypted: string, key: string, algorithm = 'des-ede3'): strin
   return (decipher.update(encrypted.replace(/[-\/]/g, (all) => {
     return dict[all]
   }), 'base64', 'utf8') + decipher.final('utf8'))
-}
+} /*</function>*/
 export {
-  cipher,
-  decipher,
+  icipher_cipher as cipher,
+  icipher_decipher as decipher,
 }

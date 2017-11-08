@@ -1,7 +1,7 @@
 {
   "name": "icipher",
   "description": "🐡cipher🐡",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "homepage": "http://github.com/zswang/icipher",
   "main": "lib/icipher",
   "typings": "lib/icipher.d.ts",

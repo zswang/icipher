@@ -15,7 +15,7 @@
   // > iMKU4mzDdZP62gJuqaABgg
   ```
  */
-declare function cipher(text: string, key: string, algorithm?: string): string;
+declare function icipher_cipher(text: string, key: string, algorithm?: string): string;
 /**
  * 解密
  *
@@ -39,5 +39,5 @@ declare function cipher(text: string, key: string, algorithm?: string): string;
   // > abc
   ```
  */
-declare function decipher(encrypted: string, key: string, algorithm?: string): string;
-export { cipher, decipher };
+declare function icipher_decipher(encrypted: string, key: string, algorithm?: string): string;
+export { icipher_cipher as cipher, icipher_decipher as decipher };
